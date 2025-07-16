@@ -1,0 +1,68 @@
+{
+    "Id": "sha256:5cc8eb93e3c0d93573a3431fe59ebd0124559de082c77dc84c5ae18b6b1da044",
+    "RepoTags": [
+        "vsc-volume-bootstrap:latest"
+    ],
+    "RepoDigests": [
+        "vsc-volume-bootstrap@sha256:5cc8eb93e3c0d93573a3431fe59ebd0124559de082c77dc84c5ae18b6b1da044"
+    ],
+    "Parent": "",
+    "Comment": "buildkit.dockerfile.v0",
+    "Created": "2025-07-16T02:41:34.871238126Z",
+    "DockerVersion": "",
+    "Author": "",
+    "Config": {
+        "User": "root",
+        "Env": [
+            "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt"
+        ],
+        "Cmd": [
+            "/bin/sh"
+        ],
+        "WorkingDir": "/",
+        "Labels": {
+            "dev.containers.id": "base-alpine",
+            "dev.containers.release": "v0.4.17",
+            "dev.containers.source": "https://github.com/devcontainers/images",
+            "dev.containers.timestamp": "Thu, 10 Jul 2025 11:40:24 GMT",
+            "dev.containers.variant": "3.20",
+            "devcontainer.metadata": "[ {\"id\":\"./local-features/git\"}, {\"id\":\"ghcr.io/devcontainers/features/common-utils:2\"}, {\"remoteUser\":\"vscode\"} ]",
+            "version": "0.210.5"
+        }
+    },
+    "Architecture": "amd64",
+    "Os": "linux",
+    "Size": 369249365,
+    "GraphDriver": {
+        "Data": null,
+        "Name": "overlayfs"
+    },
+    "RootFS": {
+        "Type": "layers",
+        "Layers": [
+            "sha256:994456c4fd7b2b87346a81961efb4ce945a39592d32e0762b38768bca7c7d085",
+            "sha256:5205aa62125573c53803dc84f03495330ac13a73e132032a8d0fae06141801a5",
+            "sha256:ebad4c3278b10851b1766623f99759d028a97b825517191ba9d2e95a7e8f3367",
+            "sha256:802ea8a51b35b8d96ec6bfe9e76473fa37fa9df1afcc4515e4e629791ad10c9f",
+            "sha256:0efe74fe4758bb3e103a4c7843d927a178501b616df9d601f0a62fe6b2ce35e0",
+            "sha256:9882d60a178292374a868d0b03a09c0a667013348a30ab46c1f8d4e70fd30b20",
+            "sha256:aa2896907375baeb918ba1ff4c5564b933b121f7d19dc1100f2b86544afdcc00",
+            "sha256:e08674dccdb1a96215214e1b009adfdb316261227be0083b04eb46c2f0da4e36",
+            "sha256:28d5eca69e05ce4bb88fe3c83a3149ce4384cefc2cc2f5ea081daa7576cfce7d",
+            "sha256:12cfd32528eb86e4303756b80afb9ef017116b00aae32aa7966a550bd3a4df47",
+            "sha256:27834593b0ea7def525e217700d9366437a1c2533c1ca5e02e6f3985b17b5353",
+            "sha256:720a4c4e66f1ba5c13a89d2f1eeb3f6920ceed37b310fc03d2a40e74bae3b53e",
+            "sha256:1a2bb32d580eb9064cfa7599a9a65ea1417908dedefa22ef41b47c990d3b23a5",
+            "sha256:009e5dedd95bb72aa51e98a8b1e35703a0e20ad72e5b2d0c1f302fe7610a74d4"
+        ]
+    },
+    "Metadata": {
+        "LastTagTime": "2025-07-16T02:46:13.59169325Z"
+    },
+    "Descriptor": {
+        "mediaType": "application/vnd.oci.image.index.v1+json",
+        "digest": "sha256:5cc8eb93e3c0d93573a3431fe59ebd0124559de082c77dc84c5ae18b6b1da044",
+        "size": 856
+    }
+}

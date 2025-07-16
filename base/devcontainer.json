@@ -1,0 +1,40 @@
+{
+    "name": "Language Agnostic Ubuntu Environment",
+    // Use Docker Compose to build and run the container
+    "dockerComposeFile": "docker-compose.yml",
+    // The service to start within the docker-compose.yml file
+    "service": "app",
+    // The workspace folder inside the container
+    "workspaceFolder": "/workspace",
+    // Set the default user for the container
+    "remoteUser": "vscode",
+    "customizations": {
+        "vscode": {
+            // Set default VS Code settings for the container
+            "settings": {
+                // Set Zsh as the default integrated terminal
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": {
+                    "zsh": {
+                        "path": "/bin/zsh"
+                    }
+                },
+                // Recommended for prompts like Starship/Powerlevel10k
+                "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+                "editor.fontFamily": "FiraCode Nerd Font, 'Droid Sans Mono', 'monospace', monospace",
+                "editor.fontLigatures": true
+            },
+            // Install useful extensions for a general-purpose environment
+            "extensions": [
+                "ms-vscode-remote.remote-containers",
+                "ms-azuretools.vscode-docker",
+                "eamodio.gitlens",
+                "github.vscode-github-actions",
+                "hediet.vscode-drawio"
+            ]
+        }
+    },
+    // This command runs after the container is created.
+    // We use it to ensure the .zshrc is correctly owned by the vscode user.
+    "postCreateCommand": "sudo chown vscode:vscode /home/vscode/.zshrc"
+}

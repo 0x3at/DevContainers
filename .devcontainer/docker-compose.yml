@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    # Build the image from the Dockerfile in the current directory
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    # Mount the project root directory into the /workspace directory in the container
+    volumes:
+      - ..:/workspace:cached
+
+    # Keep the container running
+    command: sleep infinity
