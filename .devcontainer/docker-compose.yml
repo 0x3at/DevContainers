@@ -2,10 +2,11 @@ version: '3.8'
 
 services:
   app:
-    # Build the image from the Dockerfile in the current directory
+    # Build the image from the Dockerfile in the .devcontainer directory,
+    # using the parent directory (project root) as the build context.
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
 
     # Mount the project root directory into the /workspace directory in the container
     volumes:

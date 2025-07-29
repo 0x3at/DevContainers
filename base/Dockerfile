@@ -37,15 +37,18 @@ WORKDIR /home/vscode
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # Install Starship prompt
-RUN curl -sS https://starship.rs/install.sh | sh -s -- -y
+RUN sudo sh -c "$(curl -sS https://starship.rs/install.sh)" -- -y
 
 # Install Zsh plugins (autosuggestions and syntax highlighting)
 RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+RUN echo pwd
+
+
 # Copy the Zsh setup script into the container and execute it
-COPY --chown=vscode:vscode scripts/setup-zsh.sh /tmp/setup-zsh.sh
-RUN /tmp/setup-zsh.sh
+COPY --chown=vscode:vscode base/scripts/setup.zsh.sh /tmp/setup.zsh.sh
+RUN /tmp/setup.zsh.sh
 
 # Set the default command to Zsh
 CMD ["zsh"]
